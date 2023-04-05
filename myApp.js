@@ -6,7 +6,7 @@ app.get("/now",function(req,res,next){
     req.time=new Date().toString();
     next();
 },function(req,res){
-    res.json =({time:req.time});
+    res.json({time:req.time});
 });
 // the fucntion middleware has to be in first position because 
 // if not! the request arent going to pass through it 
