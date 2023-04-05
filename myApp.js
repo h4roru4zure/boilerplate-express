@@ -15,6 +15,15 @@ app.use("/",function(req,res,next){
     next();
 });
 
+// First method destructurando Objects.
+
+
+app.get("/:word/echo",(req,res)=>{
+    let {word} = req.params;
+    
+    res.json({echo:word});
+});
+
 app.get("/",(req,res)=>{
     let absolutePath = __dirname + '/views/index.html'
     res.sendFile(absolutePath);
@@ -27,10 +36,6 @@ app.get("/json",(req,res)=>{
     const messaje = message_style==="uppercase"?"HELLO JSON":"Hello json";
     res.json({"message": messaje});
 });
-
-
-
-
 
 
 
