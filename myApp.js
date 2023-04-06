@@ -16,12 +16,15 @@ app.use("/",function(req,res,next){
 });
 
 // First method destructurando Objects.
-
-
 app.get("/:word/echo",(req,res)=>{
     let {word} = req.params;
-    
     res.json({echo:word});
+});
+app.get("/name",(req,res)=>{
+    let {first} =req.query;
+    let {last} =req.query;
+    let nom=first +" "+last;
+    res.json({name: nom});
 });
 
 app.get("/",(req,res)=>{
