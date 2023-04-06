@@ -7,7 +7,13 @@ console.log("Hello World");
 
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json());
-
+//always take the first code ...
+app.post("/name",(req,res)=>{
+    // let {fisrt : fisrtname , last :lastname} =req.body;
+     var string1 =req.body.first+" "+req.body.last;
+         res.json({name:string1});
+     
+ });
 app.get("/now",function(req,res,next){ 
     req.time=new Date().toString();
     next();
@@ -20,13 +26,7 @@ app.use("/",function(req,res,next){
     console.log(req.method,req.path,"-",req.ip);
     next();
 });
-//always take the first code ...
-app.post("/name",(req,res)=>{
-    // let {fisrt : fisrtname , last :lastname} =req.body;
-     let string1 =req.body.fisrt+" "+req.body.last;
-         res.json({name:string1});
-     
- });
+
 
 // First method destructurando Objects.
 app.get("/:word/echo",(req,res)=>{
