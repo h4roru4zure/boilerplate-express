@@ -46,7 +46,12 @@ app.get("/json",(req,res)=>{
     res.json({"message": messaje});
 });
 
+app.post("/name",(req,res)=>{
+    let {fisrt : fisrtname , last :lastname} =req.body;
 
+        res.json({name:`${fisrtname} ${lastname}`});
+    
+});
 
 
 
