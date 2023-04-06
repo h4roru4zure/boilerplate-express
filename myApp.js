@@ -48,8 +48,8 @@ app.get("/json",(req,res)=>{
 
 app.post("/name",(req,res)=>{
    // let {fisrt : fisrtname , last :lastname} =req.body;
-
-        res.json({name:`${req.body.fisrt} ${req.body.last}`});
+    let string1 =req.body.fisrt+" "+req.body.last;
+        res.json({name:string1});
     
 });
 
