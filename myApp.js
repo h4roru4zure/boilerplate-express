@@ -20,6 +20,13 @@ app.use("/",function(req,res,next){
     console.log(req.method,req.path,"-",req.ip);
     next();
 });
+//always take the first code ...
+app.post("/name",(req,res)=>{
+    // let {fisrt : fisrtname , last :lastname} =req.body;
+     let string1 =req.body.fisrt+" "+req.body.last;
+         res.json({name:string1});
+     
+ });
 
 // First method destructurando Objects.
 app.get("/:word/echo",(req,res)=>{
@@ -46,12 +53,7 @@ app.get("/json",(req,res)=>{
     res.json({"message": messaje});
 });
 
-app.post("/name",(req,res)=>{
-   // let {fisrt : fisrtname , last :lastname} =req.body;
-    let string1 =req.body.fisrt+" "+req.body.last;
-        res.json({name:string1});
-    
-});
+
 
 
 
