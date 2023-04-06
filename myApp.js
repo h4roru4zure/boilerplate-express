@@ -47,9 +47,9 @@ app.get("/json",(req,res)=>{
 });
 
 app.post("/name",(req,res)=>{
-    let {fisrt : fisrtname , last :lastname} =req.body;
+   // let {fisrt : fisrtname , last :lastname} =req.body;
 
-        res.json({name:`${fisrtname} ${lastname}`});
+        res.json({name:`${req.body.fisrt} ${req.body.last}`});
     
 });
 
